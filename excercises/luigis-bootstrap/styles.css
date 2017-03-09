@@ -1,0 +1,79 @@
+@font-face {
+    font-family: SuperMario256;
+    src: url(SuperMario256.ttf);
+}
+
+.row1 {
+/*    height: 70px;*/
+    padding-top: 15px;
+	display:inline-block;
+    width: 100%;
+    background-color: yellow;
+	font-family: SuperMario256;
+	font-size: 40px
+	middle
+
+    
+}
+.row2 {
+    padding-top: 25px;
+	padding-bottom: 10px;
+	height: 250px;
+    display:inline-block;
+    width: 100%;
+    background-color: red;
+	
+
+    
+}
+.row3 {
+    padding-top: 10px;
+/*	height: 150px;*/
+/*    display:inline-block;*/
+    width: 100%;
+    background-color: white;
+	font-family: SuperMario256;
+		font-size: 20px;   
+}
+.row4 {
+/*    height: 70px;*/
+    padding-top: 5px;
+	display:inline-block;
+    width: 100%;
+    background-color: yellow;
+	padding-bottom: 10px;
+	float:center;
+
+    
+}
+
+.p1 {
+	font-size: 40px;
+	 color: red;
+}
+
+.p2 {
+	font-family: SuperMario256;
+	font-size: 30px;
+	text-align: center;
+	color: red;	
+}
+.p3 {
+	font-family: SuperMario256;
+	font-size: 15px;
+	text-align: center;
+	color: red;
+}
+
+.img1 {
+/*		height:220px;*/
+		width: 180px;
+	    vertical-align: middle;        
+
+	}
+.img2 {
+		float: right;
+		width:60px;
+
+	}
+

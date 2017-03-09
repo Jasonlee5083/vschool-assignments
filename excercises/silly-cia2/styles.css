@@ -1,0 +1,23 @@
+h1 {
+    color:Green;
+}
+
+h2{
+    text-align: center;
+}
+
+#divp{
+    
+    float:left;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+#float{
+    clear:both;
+}
+
+#uppercase{
+        text-transform: uppercase;
+}
+
