@@ -1,0 +1,35 @@
+
+.inputbox7 {
+	height: 300px;
+	width: 600px;
+}
+.inputbox {
+	width: 300px;
+}
+form {
+	border: 10 px;
+	padding-top: 50px;
+	padding-bottom: 200px;
+	padding-left: 100px;
+	padding-right: 100px;
+	border-style: solid;
+	border-radius: 10;
+}
+
+.headingBadge {
+	background-color: black;
+}
+.aboutYou {
+	padding-top:30px;
+	padding-bottom:30px;
+	padding-left: 0;
+	padding-right: 0;
+	
+}
+
+.textarea2 {
+	width: 100%;
+	height: 200px;
+	
+}
+

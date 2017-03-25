@@ -1,0 +1,6 @@
+.help-text {
+	color:red;
+}
+.ng-invalid.ng-touched {
+    border-color: red;
+}

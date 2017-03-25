@@ -10,10 +10,15 @@
     width: 100%;
     background-color: yellow;
 	font-family: SuperMario256;
-	font-size: 40px
-	middle
-
-    
+	font-size: 40px;  
+	-webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+.row1:hover {
+	background-color: aqua;
+	box-shadow: 10px 10px 5px 0 #999;
 }
 .row2 {
     padding-top: 25px;
@@ -22,10 +27,16 @@
     display:inline-block;
     width: 100%;
     background-color: red;
-	
-
-    
+	-webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+	   
 }
+.row2:hover {
+	background-color: fuchsia;
+	box-shadow: 10px 10px 5px 0 #999;}
+	
 .row3 {
     padding-top: 10px;
 /*	height: 150px;*/
@@ -57,23 +68,45 @@
 	font-size: 30px;
 	text-align: center;
 	color: red;	
+	-webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 .p3 {
 	font-family: SuperMario256;
 	font-size: 15px;
 	text-align: center;
 	color: red;
+	-webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+.p2:hover {
+	transform: rotateX(-60deg);
+}
+
+.p3:hover {
+	transform: rotateY(-60deg);
 }
 
 .img1 {
 /*		height:220px;*/
 		width: 180px;
 	    vertical-align: middle;        
-
 	}
+.img1:hover {
+	transform: rotate(20deg);
+}
+
 .img2 {
-		float: right;
-		width:60px;
-
+	float: right;
+	width:60px;
 	}
+.img2:hover {
+	animation: roll 3s infinite;
+  	transform: rotate(30deg);
+  	opacity: .7;
+}
 

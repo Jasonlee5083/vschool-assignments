@@ -1,0 +1,82 @@
+/*color in the header is weired*/
+.header1 {
+    padding: 10px;
+    color: white;
+    background-color: black;
+    clear: left;
+    text-align: center;
+}
+.nightHeader {
+	padding: 10px;
+    color: whitesmoke;
+    background-color:dodgerblue ;
+    clear: left;
+    text-align: center;
+}
+
+
+.nightBody {
+	background-color: gray;
+}
+footer {
+    padding: 2px;
+    color: black;
+    background-color: whitesmoke;
+    clear: left;
+    text-align: center;
+    line-height: 2px;
+    font-family:monospace
+    
+}
+
+.row {
+    text-align: center;
+}
+
+li {
+    text-align: left;
+    margin-left: 30px;
+}
+
+.col-4 {
+/*    height: 140px;*/
+    width: 33%;
+    display: inline-block;
+    align-content: center
+}
+
+.Goombas {
+    width: 120px;
+    height: 150px;
+    align-items: center;
+    padding-top: 50px;
+/*    padding-left: 30px;*/
+    padding-bottom: 10px;
+}
+
+.Bob-ombs {
+    width: 170px;
+    height: 150px;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 10px;
+
+
+}
+
+.Cheep-cheeps {
+    width: 150px;
+    height: 150px;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 10px;
+
+
+}
+
+.mariopic {
+    width: 60px;
+    padding-left: 10px;
+    display: inline-block; 
+    float :left;
+}

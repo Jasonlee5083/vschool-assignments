@@ -1,0 +1,23 @@
+{
+	"appetizers": [{
+		"name": "Chips",
+		"ingredients": ["a", "b", "c"],
+		"descriptions": "..."
+	}, {
+		"name": "Chips",
+		"ingredients": ["a", "b", "c"],
+		"descriptions": "..."
+	}],
+	
+	"sandwiches": [{
+		"name": "Chips",
+		"ingredients": ["a", "b", "c"],
+		"descriptions": "..."
+	}, {
+		"name": "Chips",
+		"ingredients": ["a", "b", "c"],
+		"descriptions": "..."
+	}]
+
+
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="styles.css">
+
+</head>
+<body ng-controller = "mainCtrl">
+
+<div class="container">
+	<div class="row">
+		<div class="col-sm-4">
+			<input type="text" placeholder="Title" ng-model="newList.Title">
+		</div>
+		<div class="col-sm-4">
+			<input type="text" placeholder="img URL" ng-model="newList.ImgURL">
+		</div>
+		<div class="col-sm-4">
+			<input type="text" placeholder="Description" ng-model="newList.Description">
+		</div>
+		<div class="submit col-sm-12 text-center">
+			<button ng-click="submit(newList)"class="button" type="button">Submit</button>
+		</div>
+	</div>	
+</div>
+		<div ng-repeat="item in lists">
+
+		<div class="title1 text-center"><h3>{{item.Title}}</h3></div>
+		<div class="descripton1 text-center">{{item.Description}}</div>
+		<div class="imgURL1 text-center"><img ng-src="{{item.ImgURL}}"></div>
+		
+</div>	
+		
+		
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
+
+
+

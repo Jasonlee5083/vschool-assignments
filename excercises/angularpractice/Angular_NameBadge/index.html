@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" ng-app ='myApp'>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.4/cerulean/bootstrap.min.css">
+    
+	  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	  
+</head>
+
+<body ng-controller='mainCtrl'>
+
+<form  class ='form1 text-center'> 
+<div>
+<input class= "inputbox" type ='text' placeholder="First Name" ng-model="newPerson.firstName" ng-minlength="3" required><input class= "inputbox" type ='text' placeholder="Last Name" ng-model="newPerson.lastName" ng-minlength="3" required>  
+</div>
+
+<div>
+<input class= "inputbox" type ='text' placeholder="Email" ng-model="newPerson.email" ng-minlength="3" required>
+<input class= "inputbox" type ='text' placeholder="Place of Birth" ng-model="newPerson.birthPlace" ng-minlength="3" required>  
+</div>
+
+<div>
+<input class= "inputbox" type ='text' placeholder = "Phone" ng-model="newPerson.phone" ng-minlength="3" required>
+<input class= "inputbox" type ='text' placeholder="Favorite Food"ng-model="newPerson.favoriteFood" ng-minlength="3" required>  
+</div>
+<br>
+<br>
+<textarea class= "inputbox7" placeholder="tell us about yourself" ng-model="newPerson.aboutYou"></textarea>
+
+<br>
+<div>
+	<button ng-click="submit(newPerson)" class= "button1" type="button" >submit</button>  
+</div>
+</form>
+
+<form class ='form2'> 
+
+<div class="panel-group">
+    <div class="panel panel-default">
+      <div class="headingBadge panel-heading">Badge</div>
+<div class="panel-body">
+    
+</div>
+		
+	<div class="container">	
+	  <div class="row">
+		<div class ="divName col-sm-6"> 
+		Name: {{person.firstName}} </div>
+		<div class ="divPhone col-sm-6"> 
+		Phone: {{person.phone}} </div>
+		
+
+		<div class ="placeOfB col-sm-6"> 
+		Place of Birth: {{person.birthPlace}} </div>
+		<div class ="favFood col-sm-6"> 		
+		Favorite food: {{person.favoriteFood}} </div>
+		<div class ="email col-sm-6">
+	 	Email: {{person.email}} </div>
+		
+		<br>
+		<br>
+	  </div>
+	   <div class ="aboutYou col-sm-12 ">
+		<textarea class ="textarea2">
+		{{person.aboutYou}}</textarea> </div>
+		<br>
+		<br>
+		</div>
+	</div>
+</div>
+</form>
+
+<script src="app.js"></script>
+<script src="main.js"></script>
+<script src="dataservice.js"></script>
+<link rel="stylesheet" href="styles.css">
+</body>
+</html>
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en" ng-app ='myApp'>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.4/cerulean/bootstrap.min.css">
+    
+	  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	  
+</head>
+
+<body ng-controller='mainCtrl'>
+
+<form ng-submit="myInfor()" class ='form1 text-center'> 
+<div>
+<input class= "inputbox" type ='text' placeholder="First Name" ng-model="firstName" ng-minlength="3" required><input class= "inputbox" type ='text' placeholder="Last Name" ng-model="lastName" ng-minlength="3" required>  
+</div>
+
+<div>
+<input class= "inputbox" type ='text' placeholder="Email" ng-model="email" ng-minlength="3" required>
+<input class= "inputbox" type ='text' placeholder="Place of Birth" ng-model="birthPlace" ng-minlength="3" required>  
+</div>
+
+<div>
+<input class= "inputbox" type ='text' placeholder = "Phone" ng-model="phone" ng-minlength="3" required>
+<input class= "inputbox" type ='text' placeholder="Favorite Food"ng-model="favoriteFood" ng-minlength="3" required>  
+</div>
+<br>
+<br>
+<textarea class= "inputbox7" placeholder="tell us about yourself" ng-model="aboutYou"></textarea>
+
+<br>
+<div>
+	<button ng-click="myInfo()" class= "button1" type="button" >submit</button>  
+</div>
+</form>
+
+<form class ='form2 text-center'> 
+<div>
+	<h2> Name: {{person.fname}}  		phone: {{person.phone}}</h2> 
+</div>
+
+<div>
+<h2> Place of Birth: {{person.birthPlace}} 		Favorite food: {{person.favoriteFood}} </h2> 
+</div>
+
+<div>
+<h2> Email: {{person.email}} </h2>
+</div>
+<br>
+<br>
+<textarea>{{person.aboutYou}}</textarea>
+
+</form>
+<script src="app.js"></script>
+<script src="main.js"></script>
+<script src="dataservice.js"></script>
+<link rel="stylesheet" href="styles.css">
+</body>
+</html>
+-->
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<body ng-controller="mainControler">
+First name <input ng-model="newPerson.firstname"/>
+Last name <input ng-model="newPerson.lastname"/>
+
+
+<button ng-click="submit(newPerson)">submit</button>
+<div ng-show="person">
+Your name is:
+{{person.firstname}}
+{{person.lastname}}
+
+</div>
+
+
+
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script><script src="app.js"></script>	
+</body>
+</html>-->
+<!--
+
+var app = angular.module("myApp", []);
+
+app.controller("mainControler", ["$scope", function($scope) {
+	
+	$scope.submit = function(info) {
+		$scope.person = info;
+	}
+}]);
+		
+-->

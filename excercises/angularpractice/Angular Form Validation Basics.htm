@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)http://coursework.vschool.io/angular-form-validation-basics/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Angular Form Validation Basics</title>
+    <meta name="description" content="">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="http://coursework.vschool.io/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="./Angular Form Validation Basics_files/screen.css">
+    <link rel="stylesheet" type="text/css" href="./Angular Form Validation Basics_files/css">
+    <link rel="stylesheet" type="text/css" href="./Angular Form Validation Basics_files/prism.css">
+
+    <link rel="canonical" href="http://coursework.vschool.io/angular-form-validation-basics/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="http://coursework.vschool.io/angular-form-validation-basics/amp/">
+    
+    <meta property="og:site_name" content="V School Web Development">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Angular Form Validation Basics">
+    <meta property="og:description" content="Form validation refers to the ability to check the status of the inputs your user gave you to make sure everything is as expected. For example, did they try to submit a phone number of &quot;1&quot; instead of a valid phone number? Does the email address have the required @ symbol?">
+    <meta property="og:url" content="http://coursework.vschool.io/angular-form-validation-basics/">
+    <meta property="og:image" content="http://coursework.vschool.io/content/images/2016/05/url.jpg">
+    <meta property="article:published_time" content="2016-05-24T21:50:15.000Z">
+    <meta property="article:modified_time" content="2017-03-22T15:55:10.000Z">
+    <meta property="article:tag" content="Lesson">
+    <meta property="article:tag" content="Web Applications">
+    <meta property="article:tag" content="Level 2">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Angular Form Validation Basics">
+    <meta name="twitter:description" content="Form validation refers to the ability to check the status of the inputs your user gave you to make sure everything is as expected. For example, did they try to submit a phone number of &quot;1&quot; instead of a valid phone number? Does the email address have the required @ symbol?">
+    <meta name="twitter:url" content="http://coursework.vschool.io/angular-form-validation-basics/">
+    <meta name="twitter:image" content="http://coursework.vschool.io/content/images/2016/05/url.jpg">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Bob Ziroll">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="Lesson, Web Applications, Level 2">
+    <meta property="og:image:width" content="469">
+    <meta property="og:image:height" content="107">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "V School Web Development",
+        "logo": "http://coursework.vschool.io/content/images/2016/10/v-school-abbreviated-coursework-logo.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Bob Ziroll",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://coursework.vschool.io/content/images/2016/04/1526275_10152073097568744_1599449422_n.jpg",
+            "width": 640,
+            "height": 960
+        },
+        "url": "http://coursework.vschool.io/author/bob/",
+        "sameAs": []
+    },
+    "headline": "Angular Form Validation Basics",
+    "url": "http://coursework.vschool.io/angular-form-validation-basics/",
+    "datePublished": "2016-05-24T21:50:15.000Z",
+    "dateModified": "2017-03-22T15:55:10.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://coursework.vschool.io/content/images/2016/05/url.jpg",
+        "width": 469,
+        "height": 107
+    },
+    "keywords": "Lesson, Web Applications, Level 2",
+    "description": "Form validation refers to the ability to check the status of the inputs your user gave you to make sure everything is as expected. For example, did they try to submit a phone number of &quot;1&quot; instead of a valid phone number? Does the email address have the required @ symbol?",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://coursework.vschool.io"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 0.11">
+    <link rel="alternate" type="application/rss+xml" title="V School Web Development" href="http://coursework.vschool.io/rss/">
+    <link href="./Angular Form Validation Basics_files/css(1)" rel="stylesheet" type="text/css">
+<style>
+/*body, h1, h2, h3, h4, h5, h6,  
+.main-nav a,
+.subscribe-button,
+.page-title,
+.post-meta,
+.read-next-story .post:before,
+.pagination,
+.site-footer,
+[class^="icon-"]:before, [class*=" icon-"]:before {
+    font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; /* }*/
+.page-title {
+	background-color: rgba(68, 68, 68, 0.46);
+    font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 200;
+}
+.page-description {
+	background-color: rgba(68, 68, 68, 0.46);
+}
+code {
+    color: #c25;
+}
+    
+a {
+    color: #60B2B0;
+}
+
+</style>
+<style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style></head>
+<body class="post-template tag-lesson tag-web-applications tag-level-2 nav-closed">
+
+    <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="http://coursework.vschool.io/angular-form-validation-basics/#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+            <li class="nav-dashboard" role="presentation"><a href="http://coursework.vschool.io/">Dashboard</a></li>
+            <li class="nav-outside-resources" role="presentation"><a href="http://coursework.vschool.io/resource-list/">Outside Resources</a></li>
+            <li class="nav-homework" role="presentation"><a href="http://coursework.vschool.io/tag/homework/">Homework</a></li>
+            <li class="nav-exercises" role="presentation"><a href="http://coursework.vschool.io/tag/exercises/">Exercises</a></li>
+            <li class="nav-precourse" role="presentation"><a href="http://coursework.vschool.io/tag/pre-course/">Pre-Course</a></li>
+            <li class="nav-angular" role="presentation"><a href="http://coursework.vschool.io/tag/angular/">Angular</a></li>
+            <li class="nav-bootstrap" role="presentation"><a href="http://coursework.vschool.io/tag/bootstrap/">Bootstrap</a></li>
+            <li class="nav-css" role="presentation"><a href="http://coursework.vschool.io/tag/css/">CSS</a></li>
+            <li class="nav-javascript" role="presentation"><a href="http://coursework.vschool.io/tag/javascript/">Javascript</a></li>
+            <li class="nav-html" role="presentation"><a href="http://coursework.vschool.io/tag/html/">HTML</a></li>
+            <li class="nav-jquery" role="presentation"><a href="http://coursework.vschool.io/tag/jquery/">jQuery</a></li>
+            <li class="nav-mongo" role="presentation"><a href="http://coursework.vschool.io/tag/mongo/">Mongo</a></li>
+            <li class="nav-node" role="presentation"><a href="http://coursework.vschool.io/tag/node/">Node</a></li>
+            <li class="nav-tools" role="presentation"><a href="http://coursework.vschool.io/tag/tools/">Tools</a></li>
+            <li class="nav-warmups" role="presentation"><a href="http://coursework.vschool.io/tag/warmups/">Warmups</a></li>
+            <li class="nav-career" role="presentation"><a href="http://coursework.vschool.io/tag/career/">Career</a></li>
+            <li class="nav-mean-stack" role="presentation"><a href="http://coursework.vschool.io/tag/mean-stack/">MEAN Stack</a></li>
+            <li class="nav-authentication" role="presentation"><a href="http://coursework.vschool.io/tag/authentication/">Authentication</a></li>
+            <li class="nav-intro" role="presentation"><a href="http://coursework.vschool.io/tag/intro/">Intro</a></li>
+            <li class="nav-class-instruction" role="presentation"><a href="http://coursework.vschool.io/tag/instruction">Class Instruction</a></li>
+    </ul>
+        <a class="subscribe-button icon-feed" href="http://coursework.vschool.io/rss/">Subscribe</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        
+
+
+<header class="main-header post-head " style="background-image: url(/content/images/2016/05/url.jpg)">
+    <nav class="main-nav overlay clearfix">
+        <a class="blog-logo" href="http://coursework.vschool.io/"><img src="./Angular Form Validation Basics_files/v-school-abbreviated-coursework-logo.jpg" alt="V School Web Development"></a>
+            <a class="menu-button icon-menu" href="http://coursework.vschool.io/angular-form-validation-basics/#"><span class="word">Menu</span></a>
+    </nav>
+</header>
+
+<main class="content" role="main">
+    <article class="post tag-lesson tag-web-applications tag-level-2">
+
+        <header class="post-header">
+            <h1 class="post-title">Angular Form Validation Basics</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2016-05-24">24 May 2016</time>  on <a href="http://coursework.vschool.io/tag/lesson/" target="_blank">Lesson</a>, <a href="http://coursework.vschool.io/tag/web-applications/" target="_blank">Web Applications</a>, <a href="http://coursework.vschool.io/tag/level-2/" target="_blank">Level 2</a>
+            </section>
+        </header>
+
+        <section class="post-content">
+            <p>Form validation refers to the ability to check the status of the inputs your user gave you to make sure everything is as expected. For example, did they try to submit a phone number of <code>"1"</code> instead of a valid phone number? Does the email address have the required <code>@</code> symbol? Have they filled out all of the required fields?</p>
+
+<p>Form validation outside of Angular can be a bit daunting. Lots of your code-writing time is spent checking the length of the input they gave you, making sure the data they gave you is valid, etc. Then you have to add some kind of message or error class to show the user they did it wrong, then remove that class/message when they fix it, etc.</p>
+
+<p>In Angular, we're given some excellent tools to help make this process a lot smoother. This post will cover some of those tools.</p>
+
+<blockquote>
+  <p><em>To start, you may want to check out Scotch.io's excellent follow-alongs on <a href="https://scotch.io/tutorials/angularjs-form-validation" target="_blank">AngularJS Form Validation</a> and <a href="https://scotch.io/tutorials/angularjs-form-validation-with-ngmessages" target="_blank">Form Validation w/ ngMessages</a>. Much of what we cover here is adapted from their content.</em></p>
+</blockquote>
+
+<h3 id="whatwerebuilding">What we're building</h3>
+
+<p>We'll be building a basic sign-up form. It will have the following fields and requirements:</p>
+
+<ul>
+<li>First name - optional</li>
+<li>Last name - optional</li>
+<li>Email address - required, must be valid email address</li>
+<li>Phone Number - optional</li>
+<li>Password - required, must be longer than 7 characters</li>
+<li>Password confirmation - required, must match the first password</li>
+<li>Button for submitting the info, which should just log to the console all of the person's info. (Obviously not what you'd really want to do with this info, but that's the topic for another post.)</li>
+</ul>
+
+<p>We'll also be using bootstrap for our styling and layout so our form looks good.</p>
+
+<h3 id="startingpoint">Starting Point</h3>
+
+<p>Let's get some code set up as a starting point. Everything in here is basic HTML form stuff and the generic Angular setup. If you're unfamiliar with anything in this boilerplate code, you should probably study up on HTML forms and/or Angular first before moving on.</p>
+
+<h6 id="indexhtml">index.html:</h6>
+
+<pre class=" language-markup"><code class=" language-markup"><span class="token doctype">&lt;!DOCTYPE html&gt;</span>  
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span> <span class="token attr-name">ng-app</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ValidationPractice<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Signup Form<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token comment" spellcheck="true">&lt;!--  Bring in Bootstrap from the CDN  --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token comment" spellcheck="true">&lt;!--  Add our own styles  --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>styles.css<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span> <span class="token attr-name">ng-controller</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>FormController<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>col-md-4 col-md-offset-4 well<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>validateForm<span class="token punctuation">"</span></span> <span class="token attr-name">novalidate</span><span class="token punctuation">&gt;</span></span> <span class="token comment" spellcheck="true">&lt;!-- We add "novalidate" so HTML won't validate for us automatically. --&gt;</span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-group col-md-12<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>firstName<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-control<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>First Name<span class="token punctuation">"</span></span> <span class="token attr-name">ng-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>person.firstName<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-group col-md-12<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>lastName<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-control<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Last Name<span class="token punctuation">"</span></span> <span class="token attr-name">ng-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>person.lastName<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-group col-md-12<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>email<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>email<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-control<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Email<span class="token punctuation">"</span></span> <span class="token attr-name">ng-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>person.email<span class="token punctuation">"</span></span> <span class="token attr-name">required</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-group col-md-12<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tel<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>phone<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-control<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Phone Number<span class="token punctuation">"</span></span> <span class="token attr-name">ng-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>person.phone<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-group col-md-12<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-control<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Password<span class="token punctuation">"</span></span> <span class="token attr-name">ng-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>person.password<span class="token punctuation">"</span></span> <span class="token attr-name">required</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-group col-md-12<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>passwordRepeat<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-control<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Password Repeat<span class="token punctuation">"</span></span> <span class="token attr-name">ng-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>person.passwordRepeat<span class="token punctuation">"</span></span> <span class="token attr-name">required</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>btn btn-primary btn-lg center-block<span class="token punctuation">"</span></span> <span class="token attr-name">ng-click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>addBadge(person)<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Submit<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token comment" spellcheck="true">&lt;!--  AngularJS from the CDN  --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token comment" spellcheck="true">&lt;!--  Our own JS  --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>app.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>  
+</code></pre>
+
+<p><br>  </p>
+
+<h6 id="appjs">app.js:</h6>
+
+<pre class=" language-javascript"><code class=" language-javascript"><span class="token keyword">var</span> app <span class="token operator">=</span> angular<span class="token punctuation">.</span><span class="token function">module</span><span class="token punctuation">(</span><span class="token string">"ValidationPractice"</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+app<span class="token punctuation">.</span><span class="token function">controller</span><span class="token punctuation">(</span><span class="token string">"FormController"</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"$scope"</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>$scope<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    $scope<span class="token punctuation">.</span>logPersonInfo <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>person<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// More to come</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+<p>A few important points about the above code:</p>
+
+<ul>
+<li>We added <code>novalidate</code> to the form. This prevents the default HTML5 built-in validations from running, since we'll be making our own.</li>
+<li><code>ng-model</code> is already applied to each input. It is building a <code>person</code> object with the appropriate properties on the fly for us.</li>
+<li>The <code>email</code>, <code>password</code>, and <code>passwordRepeat</code> fields are required with the built-in HTML <code>required</code> attribute added to the element.
+<br></li>
+</ul>
+
+<h3 id="importantangularformandinputproperties">Important Angular form and input properties</h3>
+
+<p>Angular automagically sets properties on each input type that allows us to access more information about the state of that input and the state of the form based on the user's interaction with the form. In other words, Angular gives us a way to know more information about how the user has interacted with the form, such as "is the current input valid according to your rules?", "has the user typed anything into this input box yet?", and "has the user entered and left this input box already?". These give us tons of flexibility to set our styles and messages at exact the times we want.</p>
+
+<p>Here are the properties Angular adds to the form and each input, along with their descriptions:</p>
+
+<ul>
+<li><code>$valid</code> - Boolean that tells you if the form or input is valid based on the rules you've set</li>
+<li><code>$invalid</code> - Boolean that tells you if the form or input <strong>isn't</strong> valid based on the rules you've set. Simply the exact opposite of <code>$valid</code>.</li>
+<li><code>$dirty</code> - Boolean that tells you if the user <strong>has already</strong> interacted with the form or a individual input (typed something in, checked a checkbox, etc.). Remains true even if they delete what they typed or uncheck the box, etc.</li>
+<li><code>$pristine</code> - Boolean that tells you if the user <strong>hasn't yet</strong> interacted with the form or individual input. It will remain false even if they delete what they typed or uncheck the box, etc. Simply the exact opposite of <code>$dirty</code>.</li>
+<li><code>$touched</code> - Boolean turns to true if the input undergoes a "blur" event, meaning the user has clicked into the input box and then clicked out of it, whether they type something or not.</li>
+</ul>
+
+<h6 id="accessingtheseproperties">Accessing these properties:</h6>
+
+<p>In vanilla JS, we're used to using something like <code>document.&lt;form name&gt;</code> or <code>document.getElementById("my-form")</code>. In Angular, they make it slightly simpler by allowing you to just access the form with <code>&lt;form name&gt;</code> and access the input fields with <code>&lt;form name&gt;.&lt;input name&gt;</code>. So you need to make sure to give your form and inputs a <code>name</code> property to make this easier.</p>
+
+<p>Once you've accessed the form or input, you just add the property listed above to get the boolean value of that property. For example:</p>
+
+<p><code>myForm.firstName.$touched</code> will tell you whether or not the first name field sent off a blur event at some point.</p>
+
+<h3 id="quickvalidationrules">Quick validation rules</h3>
+
+<p>Angular gives us some directives to make certain validation rules very easy for us to implement:</p>
+
+<ul>
+<li><code>ng-minlength</code> sets the minimum length allowed for an input, meaning as long as the user's input is shorter than the specified minlength, it is not valid. (E.g.: We can add <code>ng-minlength="7"</code> on our password field, which sets the <code>$invalid</code> property to true (and the <code>$valid</code> property to false) <em>until 7 or more characters are typed into the input box</em>, at which time it flips those.</li>
+</ul>
+
+<pre class=" language-markup"><code class=" language-markup"><span class="token comment" spellcheck="true">&lt;!-- index.html --&gt;</span>  
+...
+
+<span class="token comment" spellcheck="true">&lt;!-- Password input field --&gt;</span>  
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-control<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Password<span class="token punctuation">"</span></span> <span class="token attr-name">ng-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>person.password<span class="token punctuation">"</span></span> <span class="token attr-name">ng-minlength</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>7<span class="token punctuation">"</span></span> <span class="token attr-name">required</span><span class="token punctuation">&gt;</span></span>  
+</code></pre>
+
+<h3 id="coolthingsyoucandonowthatyouhavetherighttools">Cool things you can do now that you have the right tools</h3>
+
+<h6 id="disablethesubmitbutton">Disable the submit button</h6>
+
+<p>Because we set some validation rules (email address is required and must be valid, password must be 7 characters or longer), our whole form (and those specific fields) are considered "invalid" until they are fixed. This means that our <code>validateForm.$invalid</code> is set to true until the user fixes those issues. So we can use the <code>ng-disabled</code> directive to disable our button until the issues are fixed, preventing the user from submitted incomplete or invalid data.</p>
+
+<pre class=" language-markup"><code class=" language-markup"><span class="token comment" spellcheck="true">&lt;!-- index.html --&gt;</span>  
+...
+
+<span class="token comment" spellcheck="true">&lt;!-- Submit Button --&gt;</span>  
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>btn btn-primary btn-lg center-block<span class="token punctuation">"</span></span> <span class="token attr-name">ng-click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>addBadge(person)<span class="token punctuation">"</span></span> <span class="token attr-name">ng-disabled</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>validateForm.$invalid<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Submit<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>  
+</code></pre>
+
+<p><img src="./Angular Form Validation Basics_files/Screen-Shot-2016-05-25-at-12-22-38-PM.png" alt="disabled submit button"></p>
+
+<h6 id="addhelpfulmessageswhentheuserdiditwrong">Add helpful messages when the user did it wrong</h6>
+
+<p>Because we can test the current state of the form and the input fields, we can show and hide helpful messages to the user when they're putting in the information incorrectly.</p>
+
+<p>Using Angular's <code>ng-show</code> directive and the validation properties set on our form and inputs, we can make it so a help message only shows to the user when something seems wrong. For example, if the email field is invalid.</p>
+
+<p>However, it'd be a bit annoying to have the messages show up immediately when you load the page. To avoid this, we can add a conditional to the <code>ng-show</code> telling it to only show the message if the email field is invalid <strong>and</strong> if they've already focused in on the field and then blurred away (remember <code>$touched</code>?), since that would likely indicate they think they did everything right and they're moving on to the next input. Once <code>$touched</code> flips to true and the email field is invalid, then we feel the obligation to show them the error/help message. And because of our strict <code>&amp;&amp;</code> adding the text, if they go back and fix the problem (make the input valid), the message will go away.</p>
+
+<p>We can put any kind of conditional checks in the <code>ng-show</code> directive, including checking that <code>$scope</code> properties are doing what we want them to. For example, we can check that the user input the password repeat correctly by checking that <code>person.passwordRepeat</code> is the </p>
+
+<pre class=" language-markup"><code class=" language-markup"><span class="token comment" spellcheck="true">&lt;!-- index.html --&gt;</span>  
+...
+
+<span class="token comment" spellcheck="true">&lt;!-- Email Input Field --&gt;</span>  
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-group col-md-12<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>email<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>email<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-control<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Email<span class="token punctuation">"</span></span> <span class="token attr-name">ng-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>person.email<span class="token punctuation">"</span></span> <span class="token attr-name">required</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">ng-show</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>validateForm.email.$invalid &amp;&amp; validateForm.email.$touched<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>help-block<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Email is required.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+...
+
+<span class="token comment" spellcheck="true">&lt;!-- Password and Password Repeat Input Fields  --&gt;</span>  
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-group col-md-12<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-control<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Password<span class="token punctuation">"</span></span> <span class="token attr-name">ng-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>person.password<span class="token punctuation">"</span></span> <span class="token attr-name">ng-minlength</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>7<span class="token punctuation">"</span></span> <span class="token attr-name">required</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">ng-show</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>validateForm.password.$error.minlength &amp;&amp; validateForm.password.$touched<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>help-block<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Your password must be at least 7 characters long.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-group col-md-12<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>passwordRepeat<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-control<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Password Repeat<span class="token punctuation">"</span></span> <span class="token attr-name">ng-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>person.passwordRepeat<span class="token punctuation">"</span></span> <span class="token attr-name">required</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">ng-show</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>person.passwordRepeat !<span class="token punctuation">=</span><span class="token punctuation">=</span> person.password &amp;&amp; validateForm.passwordRepeat.$touched<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>help-block<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Passwords don't match<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>  
+</code></pre>
+
+<h6 id="changethecssoftheinputboxesbasedontheirvalidationproperties">Change the CSS of the input boxes based on their validation properties</h6>
+
+<p>Above we talked about how to access the properties added to the form and input objects, which are accessible by using <code>&lt;form-name&gt;.&lt;input-name&gt;.property</code>. Beyond adding those properties, Angular also adds corresponding <code>ng-</code> CSS classes to the HTML element itself, giving us greater flexibility in styling. So when something is <code>$pristine</code>, that element also has a CSS class of <code>ng-pristine</code> as well. When <code>$pristine</code> becomes false, the <code>ng-pristine</code> class gets removed.</p>
+
+<p>This allows us to make style changes to our input boxes, since those classes get added automatically for us. So we can do something like this:</p>
+
+<pre class=" language-css"><code class=" language-css"><span class="token selector"><span class="token class">.ng-invalid.ng-touched</span> </span><span class="token punctuation">{</span>
+    <span class="token property">border-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+<p>In other words, if both the invalid and the touched classes are on an element at the same time (which, remember, happens when they've blurred the input box and the stuff inside didn't satisfy our conditions), then add a red border around the input box to make it extra obvious that they have to fix it.</p>
+
+<p><img src="./Angular Form Validation Basics_files/Screen-Shot-2016-05-25-at-5-29-17-PM.png" alt=""></p>
+
+<h6 id="conditionallyaddingcssclassesonyourown">Conditionally adding CSS classes on your own</h6>
+
+<p>We don't have to rely solely on the <code>ng-pristine</code>, etc. classes that Angular adds for us. Instead, we can write our own classes and add them based upon the conditions found in the form or input properties discussed above using Angular's <code>ng-class</code> directive. The syntax looks like this:</p>
+
+<pre class=" language-markup"><code class=" language-markup">ng-class="{ 'class-name' : conditional expression evaluating to true/truthy or false/falsy }"  
+</code></pre>
+
+<p>If the conditional evaluates to true (or something truthy), it applies the class specified. Otherwise it removes it. So with our email field, we can use the same conditions we used to apply the help text and apply the built-in Bootstrap <code>.has-error</code> class to the entire div surrounding the input, which will style our input box with a red border and our help text with red colored text:</p>
+
+<pre class=" language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-group col-md-12<span class="token punctuation">"</span></span> <span class="token attr-name">ng-class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{<span class="token punctuation">'</span>has-error<span class="token punctuation">'</span> : validateForm.email.$invalid &amp;&amp; validateForm.email.$touched}<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>email<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>email<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-control<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Email<span class="token punctuation">"</span></span> <span class="token attr-name">ng-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>person.email<span class="token punctuation">"</span></span> <span class="token attr-name">required</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">ng-show</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>validateForm.email.$invalid &amp;&amp; validateForm.email.$touched<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>help-block<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Email is required.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>  
+</code></pre>
+
+<p><img src="./Angular Form Validation Basics_files/Screen-Shot-2016-05-25-at-5-50-45-PM.png" alt=""></p>
+
+<p>Awesome! Have you noticed what your JS file looks like so far? <em>We haven't even had to touch the JS file yet</em> because Angular has built in so many great validation features for us. We've done all of our validation in the HTML, which makes sense since the only purpose of our validation is to change what gets displayed to our user in the view based on the interaction they're having with our form. Now, someone reading through our HTML file can get all the contextual information about what should be happening from the HTML page.</p>
+
+<p>Here's what our complete HTML page looks like right now:</p>
+
+<pre class=" language-markup"><code class=" language-markup"><span class="token doctype">&lt;!DOCTYPE html&gt;</span>  
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span> <span class="token attr-name">ng-app</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ValidationPractice<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Signup Form<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token comment" spellcheck="true">&lt;!--  Bring in Bootstrap from the CDN  --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token comment" spellcheck="true">&lt;!--  Add our own styles  --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>styles.css<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span> <span class="token attr-name">ng-controller</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>FormController<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>col-md-4 col-md-offset-4 well<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>validateForm<span class="token punctuation">"</span></span> <span class="token attr-name">novalidate</span><span class="token punctuation">&gt;</span></span> <span class="token comment" spellcheck="true">&lt;!-- We add "novalidate" so HTML won't validate for us automatically. --&gt;</span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-group col-md-12<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>firstName<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-control<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>First Name<span class="token punctuation">"</span></span> <span class="token attr-name">ng-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>person.firstName<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-group col-md-12<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>lastName<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-control<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Last Name<span class="token punctuation">"</span></span> <span class="token attr-name">ng-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>person.lastName<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-group col-md-12<span class="token punctuation">"</span></span> <span class="token attr-name">ng-class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{<span class="token punctuation">'</span>has-error<span class="token punctuation">'</span> : validateForm.email.$invalid &amp;&amp; validateForm.email.$touched}<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>email<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>email<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-control<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Email<span class="token punctuation">"</span></span> <span class="token attr-name">ng-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>person.email<span class="token punctuation">"</span></span> <span class="token attr-name">required</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">ng-show</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>validateForm.email.$invalid &amp;&amp; validateForm.email.$touched<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>help-block<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Email is required.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-group col-md-12<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tel<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>phone<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-control<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Phone Number<span class="token punctuation">"</span></span> <span class="token attr-name">ng-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>person.phone<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-group col-md-12<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-control<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Password<span class="token punctuation">"</span></span> <span class="token attr-name">ng-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>person.password<span class="token punctuation">"</span></span> <span class="token attr-name">ng-minlength</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>7<span class="token punctuation">"</span></span> <span class="token attr-name">required</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">ng-show</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>validateForm.password.$error.minlength &amp;&amp; validateForm.password.$touched<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>help-block<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Your password must be at least 7 characters long.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">ng-show</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>validateForm.password.$touched &amp;&amp; validateForm.password.$invalid<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>help-block<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Password is required.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-group col-md-12<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>passwordRepeat<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-control<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Password Repeat<span class="token punctuation">"</span></span> <span class="token attr-name">ng-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>person.passwordRepeat<span class="token punctuation">"</span></span> <span class="token attr-name">required</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">ng-show</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>person.passwordRepeat !<span class="token punctuation">=</span><span class="token punctuation">=</span> person.password &amp;&amp; validateForm.passwordRepeat.$touched<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>help-block<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Passwords don't match<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>btn btn-primary btn-lg center-block<span class="token punctuation">"</span></span> <span class="token attr-name">ng-click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>addBadge(person)<span class="token punctuation">"</span></span> <span class="token attr-name">ng-disabled</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>validateForm.$invalid<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Submit<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token comment" spellcheck="true">&lt;!--  AngularJS from the CDN  --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token comment" spellcheck="true">&lt;!--  Our own JS  --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>app.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>  
+</code></pre>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>We'll be writing a second post to continue exploring even more Angular form validation abilities, but for now this should give you an excellent head-start on doing some very useful client-side validation to your forms.</p>
+        </section>
+
+        <footer class="post-footer">
+
+
+            <figure class="author-image">
+                <a class="img" href="http://coursework.vschool.io/author/bob/" style="background-image: url(/content/images/2016/04/1526275_10152073097568744_1599449422_n.jpg)" target="_blank"><span class="hidden">Bob Ziroll's Picture</span></a>
+            </figure>
+
+            <section class="author">
+                <h4><a href="http://coursework.vschool.io/author/bob/" target="_blank">Bob Ziroll</a></h4>
+
+                    <p>Read <a href="http://coursework.vschool.io/author/bob/" target="_blank">more posts</a> by this author.</p>
+                <div class="author-meta">
+                    
+                    
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=Angular%20Form%20Validation%20Basics&amp;url=http://coursework.vschool.io/angular-form-validation-basics/" onclick="window.open(this.href, &#39;twitter-share&#39;, &#39;width=550,height=235&#39;);return false;" target="_blank">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://coursework.vschool.io/angular-form-validation-basics/" onclick="window.open(this.href, &#39;facebook-share&#39;,&#39;width=580,height=296&#39;);return false;" target="_blank">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://coursework.vschool.io/angular-form-validation-basics/" onclick="window.open(this.href, &#39;google-plus-share&#39;, &#39;width=490,height=530&#39;);return false;" target="_blank">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+
+        </footer>
+
+    </article>
+</main>
+
+<aside class="read-next">
+    <a class="read-next-story " style="background-image: url(/content/images/2016/05/banner-angularjs.jpg)" href="http://coursework.vschool.io/upgrade-to-services/">
+        <section class="post">
+            <h2>Upgrade to Services</h2>
+            <p>Recently you completed a number of exercises including the $http service. Since things like HTTP requests can be used…</p>
+        </section>
+    </a>
+    <a class="read-next-story prev " style="background-image: url(/content/images/2016/05/golden-triangle-camel-safari-tours-banner.jpg)" href="http://coursework.vschool.io/camelcase/">
+        <section class="post">
+            <h2>camelCase</h2>
+            <p>Write a function that takes a string input (which contains either spaces, underscores, or hyphens/dashes between words, but…</p>
+        </section>
+    </a>
+</aside>
+
+
+
+        <footer class="site-footer clearfix">
+            <section class="copyright"><a href="http://coursework.vschool.io/">V School Web Development</a> © 2017</section>
+            <section class="poweredby">Proudly published with <a href="https://ghost.org/">Ghost</a></section>
+        </footer>
+
+    </div>
+
+    <script type="text/javascript" src="./Angular Form Validation Basics_files/jquery-1.12.0.min.js"></script>
+    <!-- You can safely delete this line if your theme does not require jQuery -->
+<script type="text/javascript" src="./Angular Form Validation Basics_files/jquery-1.11.3.min.js"></script>
+
+<script>  
+  $('.post a').attr('target', '_blank');
+  $('h2.post-title a').attr('target', '_self');
+</script>
+    <script type="text/javascript" src="./Angular Form Validation Basics_files/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="./Angular Form Validation Basics_files/index.js"></script>
+    <script type="text/javascript" src="./Angular Form Validation Basics_files/prism.js"></script>
+
+
+
+</body></html>

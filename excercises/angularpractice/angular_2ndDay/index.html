@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="practice">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body ng-controller="mainController">
+    <form name="personForm" class="form-inline" novalidate>
+        <div>
+            <label>First Name</label> 
+            <input class="form-control" ng-model="newPerson.firstName"/>
+        </div>
+        <div>
+            <label>Last Name</label> 
+            <input ng-class="'has-error': personForm.lastName.$touched && personForm.lastName.$invalid"required ng-minlength="3" name="lastName" class="form-control" ng-model="newPerson.lastName"/>
+            <p ng-show="personForm.lastName.$touched && personForm.lastName.$invalid" class="help-text">Last name is required</p>
+        </div>
+        <div>
+            <label>Phone Number</label> 
+            <input type="tel" name="phone" class="form-control" ng-model="newPerson.phone">
+        </div>
+        
+        <button ng-disabled="personForm.$invalid" class="btn btn-success" ng-click="submit(newPerson); personForm.$dirty=false">Submit</button>
+        
+        {{ personForm.$invalid }}
+    </form>
+    
+    
+    <div ng-repeat="person in people track by $index">
+        Your name is:
+        
+        {{person.firstName}}           
+        {{person.lastName}}
+        Phone number is :
+        
+        {{person.phone}}
+        {{$index}}
+
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
+<!--
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.4/cerulean/bootstrap.min.css">
+    </head>
+
+
+<body ng-controller="mainControler">
+<form name="personForm" class="form-inline" novalidate>	
+
+<label>First name </label>
+<input required ng-min="3" ng-model="newPerson.firstname"/>
+
+<label>Last name </label>
+<input required ng-min="3" ng-model="newPerson.lastname"/>
+<p ng-show="personForm.$touched && personForm.lastName.$invalid">Last name is requred</p>
+
+<label>Phone number </label>
+<input required ng-min="3" ng-model="newPerson.phone" />
+
+<button ng-disabled="personForm.$invalid"ng-click="submit(newPerson)">submit</button>
+
+
+<div ng-repeat="name in people">
+Your name is:
+{{name.firstname}}
+{{name.lastname}}
+{{name.lastname}}
+
+</div>
+</form>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script><script src="app.js"></script>	
+</body>
+</html>-->

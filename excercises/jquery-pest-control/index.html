@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html>
+<head> 
+<link rel="stylesheet" href="styles.css">
+
+</head>   
+    
+<!--<div class="container">-->
+    
+<header class ="header1 nightHeader">
+   <h1>Mario Pest Control</h1>
+</header>
+        
+<body>
+   
+<!--     Goombas, Bob-ombs, and Cheep-cheeps-->
+<div class = "row">
+
+<div class = "col-4">   
+        <img class = "Goombas" src = "Goombas.png"/>
+       <ul>
+       <li>Name: Goombas</li>
+       <li>Pricing: 5 Coins</li>
+       <li><input id="input1"><button id ="button1" onclick="goombasBaddiesCaught()">Baddies Caught</button>
+       </li>   
+       <li>Total price : <span id ="totalPofGoombas"></span></li>
+       </ul>
+       
+</div>  
+    
+    <div class = "col-4">   
+        <img class = "Bob-ombs" src = "bob-omb.jpg"/>
+        <ul>
+        <li>Name: Bob-ombs</li>
+        <li>Pricing:7 Coins</li>
+        <li><input id="input2"><button id = "button2" onclick="BobombsBaddiesCaught()">Baddies Caught</button>
+       </li>      
+        <li>Total price : <span id ="totalPofBob-ombs"></span></li>
+   
+        </ul>
+    </div>   
+
+    
+    <div class = "col-4">   
+    
+        <img class = "Cheep-cheeps" src = "Cheepcheep.jpg"/>
+        <ul>
+        <li>Name: Cheep-cheeps</li>
+        <li>Pricing:11 Coins</li>
+        <li><input id="input3"><button id = "button3" onclick="CheepcheepBaddiesCaught()">Baddies Caught</button>
+       </li>              
+        <li>Total price Sum: <span id ="totalPofCheep-cheeps"></span></li>
+
+        </ul>
+    </div>
+          <p class="totalP">Total Price Sum: <button id = "button4" onclick="totalSum()">Baddies Caught</button><span id ="totalResult"></span>
+             
+           <p class="totalP"> <button id = "button5" onclick="">Night View</button>
+           <span id ="totalResult"></span>
+          
+          <p class="p5"> <button id = "button6" onclick="">test</button>
+           <span id ="test1"></span>  
+         
+
+<br>
+<br>
+<footer>
+    <img class ="mariopic" src = "mario.jpg"/>
+    <p>Mario's email: <a href="media@mariobatali.com">media@mariobatali.com</a></p>
+  <p>Mario's webpage: <a href="http://mario.nintendo.com/">http://mario.nintendo.com</a></p>
+  <p>Mario's adress : 2401 San Pedro NE
+Albuquerque, NM 87110</p>
+      
+</footer>
+</div>   
+
+ <audio id = "audio1">
+ <source src="smw_coin.wav" type="audio/ogg">
+  
+ </audio>
+
+<script
+  src="https://code.jquery.com/jquery-3.1.1.js"
+  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  crossorigin="anonymous"></script>
+<script src="app.js"></script>
+</body>   
+<!--</div>    -->
+</html>

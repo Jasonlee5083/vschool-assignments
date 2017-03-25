@@ -7,6 +7,13 @@ header {
     clear: left;
     text-align: center;
 }
+.nightHeader {
+	padding: 10px;
+    color: whitesmoke;
+    background-color: black;
+    clear: left;
+    text-align: center;
+}
 
 footer {
     padding: 2px;

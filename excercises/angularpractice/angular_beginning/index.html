@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" ng-app ='learningAngular'>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.4/cerulean/bootstrap.min.css">
+    
+	  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+</head>
+
+<body ng-controller='mainCtrl'>
+<h1>{{getName()}}</h1>
+<!--<h1>{{type}}</h1>-->
+<h1>{{test()}}</h1>
+
+<input type ='text' ng-model='type'/>
+
+<div ng-repeat="item in todos">  
+    <h1> {{item.name}}</h1>
+    <h3> {{item.price}}</h3>
+</div>  
+
+
+<script src="app.js"></script>
+<script src="dataservice.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<!DOCTYPE html> /class work/
+<html lang="en" ng-app='myApp'>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+</head>
+<body ng-controller='mainController'>
+	<h1> {{myName}}</h1>
+	<input type="text" placemodel="name" accesskey="" ng-model="myName" />
+	
+<script src="app.js"></script>
+</body>
+</html>-->

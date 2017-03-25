@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myApp'>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	 <link rel="stylesheet" href="styles.css">
+
+
+</head>
+<body ng-controller= 'mainController'>
+	<div class='row'>
+		<div class='col-sm-3'><h2>Todo Website</h2>
+		</div>
+		<div class='col-sm-3'>
+			<input ng-model ="todoList.price"> Price
+		</div>
+		<div class='col-sm-3'>
+			<input ng-model ="todoList.title"> title
+		</div>
+		<div class='col-sm-3'>
+			<input ng-model ="todoList.imgUrl"> URL
+		</div>
+		<div class='col-sm-3'>
+			<input ng-model ="todoList.description"> Description
+		</div>
+		<div class='col-sm-3'>
+			<button ng-click ="submit(todoList)">submit</button>
+		</div>
+		
+	<div ng-repeat="item in postMe track by $index">
+	<div class="row">
+	<div class='col-sm-3'>
+	 {{item.price}}
+	</div>
+	 <div class='col-sm-3'>
+	 <img ng-src="{{item.imgUrl}}">
+	 {{item.description}}
+	 </div>
+	 <div class='col-sm-3'>
+	 <input type="checkbox", ng-model="checked"><h3 ng-class="{'finished':checked}"></h3>
+	 </div>
+	 <button ng-click="remove($index)">remove item</button>
+	</div>
+	</div>
+	</div>
+</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+<script src="app.js"></script>
+</html>
