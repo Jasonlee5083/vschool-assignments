@@ -9,38 +9,29 @@
 
 </head>
 <body ng-controller= 'mainController'>
-	<div class='row'>
-		<div class='col-sm-3'><h2>Todo Website</h2>
-		</div>
-		<div class='col-sm-3'>
-			<input ng-model ="todoList.price"> Price
-		</div>
-		<div class='col-sm-3'>
-			<input ng-model ="todoList.title"> title
-		</div>
-		<div class='col-sm-3'>
-			<input ng-model ="todoList.imgUrl"> URL
-		</div>
-		<div class='col-sm-3'>
-			<input ng-model ="todoList.description"> Description
-		</div>
-		<div class='col-sm-3'>
-			<button ng-click ="submit(todoList)">submit</button>
-		</div>
-		
-	<div ng-repeat="item in postMe track by $index">
-	<div class="row">
-	<div class='col-sm-3'>
-	 {{item.price}}
+	<div id="form1" class='row'>
+		<div class='col-sm-6'>
+			<div class="todolist not-done">
+			<h2>Todo Website</h2>
+			<div><input type='text' class="form-control add-todo" placeholder="Pirce" ng-model ="todoList.price"/></div>
+			<div><input type='text' class="form-control add-todo" placeholder="Title" ng-model ="todoList.title"/> </div>
+			<div><input type='text'  class="form-control add-todo" placeholder="imgURL" ng-model ="todoList.imgUrl"/> </div>
+			<div><input type='text'  class="form-control add-todo" placeholder="Description" ng-model ="todoList.description"> </div>
+			</div>
+			<div><button id="submit" class="btn btn-success" ng-click ="submit(todoList)">submit</button></div>
+			</div>
 	</div>
-	 <div class='col-sm-3'>
-	 <img ng-src="{{item.imgUrl}}">
-	 {{item.description}}
-	 </div>
-	 <div class='col-sm-3'>
-	 <input type="checkbox", ng-model="checked"><h3 ng-class="{'finished':checked}"></h3>
-	 </div>
-	 <button ng-click="remove($index)">remove item</button>
+	
+	<div ng-repeat="item in postMe track by $index">
+		<div id="form2" class="row">
+			<div class='col-sm-6'>
+				<div>{{item.price}}</div>
+				<div>{{item.title}}</div>
+				<div><img ng-src="{{item.imgUrl}}"></div>
+				<div>{{item.description}}</div>
+	 			<div><input type="checkbox", ng-model="checked"><h3 ng-class="{'finished':checked}"></h3></div>
+	 			<div><button ng-click="remove($index)">remove item</button></div>
+	
 	</div>
 	</div>
 	</div>
