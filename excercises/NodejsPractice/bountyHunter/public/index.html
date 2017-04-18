@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="bounty-hunter">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body ng-controller ="bounties">
+	
+	
+	<div ng-repeat="bounty in bounties">
+		<h1>{{bounty.fName}}</h1>
+		<h3>{{bounty.cost|currency:"$"}}</h3>
+		<h1></h1>
+	</div>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+
+<script src="app.js"></script>
+</body>
+
+</html>

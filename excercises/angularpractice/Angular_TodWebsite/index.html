@@ -9,32 +9,55 @@
 
 </head>
 <body ng-controller= 'mainController'>
-	<div id="form1" class='row'>
-		<div class='col-sm-6'>
+	<div id="form1" class='row' ng-hide="editing = editing">
+		<div class='col-sm-6 text-center'>
 			<div class="todolist not-done">
 			<h2>Todo Website</h2>
-			<div><input type='text' class="form-control add-todo" placeholder="Pirce" ng-model ="todoList.price"/></div>
-			<div><input type='text' class="form-control add-todo" placeholder="Title" ng-model ="todoList.title"/> </div>
-			<div><input type='text'  class="form-control add-todo" placeholder="imgURL" ng-model ="todoList.imgUrl"/> </div>
-			<div><input type='text'  class="form-control add-todo" placeholder="Description" ng-model ="todoList.description"> </div>
+			<div><input type='text' class="form-control" placeholder="Pirce" ng-model ="todoList.price"/></div>
+			<div><input type='text' class="form-control" placeholder="Title" ng-model ="todoList.title"/> </div>
+			<div><input type='text'  class="form-control" placeholder="imgURL" ng-model ="todoList.imgUrl"/> </div>
+			<div><input type='text'  class="form-control" placeholder="Description" ng-model ="todoList.description"> </div>
 			</div>
 			<div><button id="submit" class="btn btn-success" ng-click ="submit(todoList)">submit</button></div>
 			</div>
 	</div>
+	<br>
+	<br>
 	
-	<div ng-repeat="item in postMe track by $index">
-		<div id="form2" class="row">
+	<div ng-repeat="item in newPost track by $index">
+		<div id="form2" class="row" ng-hide="editing = editing">
 			<div class='col-sm-6'>
-				<div>{{item.price}}</div>
-				<div>{{item.title}}</div>
-				<div><img ng-src="{{item.imgUrl}}"></div>
-				<div>{{item.description}}</div>
-	 			<div><input type="checkbox", ng-model="checked"><h3 ng-class="{'finished':checked}"></h3></div>
-	 			<div><button ng-click="remove($index)">remove item</button></div>
+				<ul ng-class="{finished:checked}">
+					<li><div>{{item.price}}</div></li>
+					<li><div>{{item.title}}</div></li>
+					<li><div><img ng-src="{{item.imgUrl}}"></div></li>
+					<li><div>{{item.description}}</div></li>
+				</ul>
+	 			<div><input class="finishedCheckbox" type="checkbox", ng-model="checked"> finished item
+	 			<button id="delete" class="btn btn-success" ng-click="remove($index, item._id)">remove item</button>
+				<!--	 			<button id="delete" class="btn btn-success" ng-click="remove($index)">remove item</button>-->
+	 			</div>
+			</div>
+		</div>
+			<div id="form3" class="row" ng-show="editing =  editing">
+			<div class="col-sm-6">
+			<div class="todolist edit">
+				<h2> Item Eidit </h2>
+				<div><input type='text' class="form-control add-todo" placeholder="Pirce" ng-model ="item.price"/>
+				</div>
+				<div><input type='text' class="form-control add-todo" placeholder="Title" ng-model ="item.title"/> </div>
+				<div><input type='text'  class="form-control add-todo" placeholder="imgURL" ng-model ="item.imgUrl"/> </div>
+				<div><input type='text'  class="form-control add-todo" placeholder="Description" ng-model ="item.description"> </div>
+				</div>
+				<div><button id="edit" class="btn btn-success" ng-click ="save(item); editing = !editing">save</button></div>				
+			</div>
+		</div>
+		<div><button id="edit" class="btn btn-success" ng-click ="editing = !editing ">edit</button></div>	
+		</div>
+
+	<br>
+	<br>
 	
-	</div>
-	</div>
-	</div>
 </body>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 

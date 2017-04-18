@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myApp'>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>  
+      <navbar></navbar>
+<div ng-controller="myController">  
+    
+
+<!--    <my-info name="Joe" email="A@gmail"></my-info>-->
+<!--
+   <my-info 
+  name="{{personName}}" email={{personEmail}}></my-info>
+-->
+<!--
+   <my-info ng-repeat="firend in friends"
+  name="{{personName}}" email={{personEmail}}></my-info>
+--> 
+<!--
+      <my-info contact="friend" ></my-info>
+</div>  
+-->
+    <my-info ng-repeat="person in people" contact="people" ></my-info>
+</div>  
+
+
+<div ng-controller="secondContrller">
+<!--    <my-info name={{contactName}} email={{contactEmail}}></my-info>-->
+	<my-info contact="associate"></my-info>
+</div>
+
+<!--
+	<my-info></my-info>
+	<div my-info></div>
+	<div class="my-info"></div>
+	<ng-view></ng-view>
+	
+-->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+	  <script src="app.js"></script>
+
+</body>
+</html>

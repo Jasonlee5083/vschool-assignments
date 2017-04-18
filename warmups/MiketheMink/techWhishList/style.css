@@ -1,0 +1,33 @@
+
+body {
+	padding-top: 10px;
+	
+}
+
+img {
+	height:300px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	align-items: center;
+}
+
+table {
+	margin-left: 30px;
+	width:500px;
+	border:1px;
+}
+.results {
+	margin-left: 50px;
+/*	text-align: left;*/
+/*	height : 400px;*/
+	background-color: whitesmoke;
+
+	width: :500px;
+	border: 1px;
+	
+}
+
+.border {
+	border: red 10px solid;
+}
+

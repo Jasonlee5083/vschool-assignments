@@ -1,0 +1,34 @@
+html,
+body,
+
+.view {
+    height: 100%;
+}
+/* Navigation*/
+
+#navbar {
+    background-color: white;
+	padding-top: 20px;
+	padding-bottom: 60px;
+	text-align: center;
+	font-family: inherit;
+}
+/*Intro*/
+#view {
+	height:100vh;
+        background-image: url('DSC_0081.jpg');
+/*		no-repeat center center fixed;*/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.container {
+	height: 70px;
+	width:100%;
+	background-color:rgb(254,230,219);
+	background-size:cover ;
+	
+}
+

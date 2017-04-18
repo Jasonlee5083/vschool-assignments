@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myConverter">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body ng-controller ="mainController" >
+ 	<h1>Utah's Current temperature</h1>
+	<select ng-change="init()" ng-model="selectedTems" ng-options="x for (x,y) in tems"> </select> please select temperature type
+	
+	
+	<h1>{{cur|convertTemp: selectedTems}} {{selectedTems}}</h1>
+ 
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
+
+

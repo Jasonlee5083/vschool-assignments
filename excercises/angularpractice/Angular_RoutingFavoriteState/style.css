@@ -1,0 +1,15 @@
+
+body {
+	padding-top: 10px;
+	
+}
+
+img {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	align-items: center;
+}
+
+.border {
+	border: red 10px solid;
+}

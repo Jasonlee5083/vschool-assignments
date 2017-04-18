@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myApp'>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container">
+  <ul class="nav navbar-nav">
+  <li><a href="/#/one">one</a></li>
+  <li><a href="/#/two">two</a></li>
+   <li><a href="/#/three">three</a></li>
+</ul>
+  </div>
+</nav>
+<ng-view></ng-view>
+
+
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script src="app.js"></script>
+  <script src="one/one.js"></script>
+  <script src="two/two.js"></script>
+  <script src="three/three.js"></script>
+
+  
+</body>
+</html>

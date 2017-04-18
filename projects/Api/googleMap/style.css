@@ -1,0 +1,115 @@
+
+/*
+body {
+	padding-top: 10px;
+	
+}
+
+img {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	align-items: center;
+}
+
+.border {
+	border: red 10px solid;
+}
+*/
+
+  body {
+      font: 20px Montserrat, sans-serif;
+      line-height: 1.8;
+      color: black;
+  }
+
+  .margin {
+	  
+	  margin-bottom: 45px;
+}
+  .bg-1 { 
+
+      color: black;
+	  background-image: url("body.jpg");
+	 background-image:  no-repeat center center fixed;
+	  height: 1000hv;
+      background-size: cover;
+	  background-repeat: no-repeat;
+	  
+  }
+
+@media only screen and (max-width: 500px) {
+    .bg-1 {
+        background-size: contain;
+    }
+}
+
+#one {
+	color: darkgray;
+}
+.resultOut  {
+	color: whitesmoke;
+	
+}
+
+.inputmapdata {
+	padding-bottom: 20px;
+    display: inline-block;
+	text-align: center
+/*		    text-align: left;*/
+
+
+}
+
+.inputAdress{
+	padding-bottom: 20px;
+}
+
+.mapshow {
+	height: 600px;
+	width: 450px;
+    display: inline-block;
+}
+
+.mapshow2 {
+	width:50%;
+	margin: auto;
+}
+  .bg-4 { 
+      background-color: #2f2f2f; /* Black Gray */
+     
+  }
+  .container-fluid {
+      padding-top: 20px;
+      padding-bottom: 20px;
+  }
+  .navbar {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border: 0;
+      border-radius: 0;
+      margin-bottom: 0;
+      font-size: 12px;
+      letter-spacing: 5px;
+  }
+#map {
+        height: 100%;
+      }
+  
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+.angular-google-map-container { height: 400px; }
+
+.comingsoon {
+	
+	  background-image: url("coming-soon.jpg");
+	 background-image:  no-repeat center center fixed;
+	  height: 1000hv;
+      background-size: cover;
+	  background-repeat: no-repeat;
+	  
+}
+

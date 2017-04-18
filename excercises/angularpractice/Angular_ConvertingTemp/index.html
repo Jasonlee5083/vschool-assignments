@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myConverter">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body ng-controller ="mainController">
+
+<div ng-repeat="item in temps">
+{{item}} C
+</div>
+
+<div ng-repeat="item in temps">
+{{item|convertTemp}} F
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>

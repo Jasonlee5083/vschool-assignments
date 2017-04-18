@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myApp'>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	 <link rel="stylesheet" href="styles.css">
+
+
+</head>
+<body ng-controller= 'mainController'>
+	<div id="form1" class='row' ng-hide="editing = editing">
+		<div class='col-sm-6 text-center'>
+			<div class="todolist not-done">
+			<h2>Todo Website</h2>
+			<div><input type='text' class="form-control" placeholder="Pirce" ng-model ="newTodo.price"/></div>
+			<div><input type='text' class="form-control" placeholder="Title" ng-model ="newTodo.title"/> </div>
+			<div><input type='text'  class="form-control" placeholder="imgURL" ng-model ="newTodo.imgUrl"/> </div>
+			<div><input type='text'  class="form-control" placeholder="Description" ng-model ="newTodo.description"> </div>
+			</div>
+			<div><button id="submit" class="btn btn-success" ng-click ="submit(newTodo)">submit</button></div>
+			</div>
+	</div>
+	<br>
+	<br>
+	
+	<div ng-repeat="item in posts track by $index">
+		<div id="form2" class="row" ng-hide="editing = editing">
+			<div class='col-sm-6'>
+				<ul ng-class="{finished:checked}">
+					<li><div>{{item.price}}</div></li>
+					<li><div>{{item.title}}</div></li>
+					<li><div><img ng-src="{{item.imgUrl}}"></div></li>
+					<li><div>{{item.description}}</div></li>
+				</ul>
+	 			<div><input class="finishedCheckbox" type="checkbox", ng-model="checked"> finished item
+	 			<button id="delete" class="btn btn-success" ng-click="remove($index, item._id)">remove item</button>
+				<!--	 			<button id="delete" class="btn btn-success" ng-click="remove($index)">remove item</button>-->
+	 			</div>
+			</div>
+		</div>
+			<div id="form3" class="row" ng-show="editing =  editing">
+			<div class="col-sm-6">
+			<div class="newTodo edit">
+				<h2> Item Eidit </h2>
+				<div><input type='text' class="form-control add-todo" placeholder="Pirce" ng-model ="item.price"/>
+				</div>
+				<div><input type='text' class="form-control add-todo" placeholder="Title" ng-model ="item.title"/> </div>
+				<div><input type='text'  class="form-control add-todo" placeholder="imgURL" ng-model ="item.imgUrl"/> </div>
+				<div><input type='text'  class="form-control add-todo" placeholder="Description" ng-model ="item.description"> </div>
+				</div>
+				<div><button id="edit" class="btn btn-success" ng-click ="save(item,$index); editing = !editing">save</button></div>				
+			</div>
+		</div>
+		<div><button id="edit" class="btn btn-success" ng-click ="editing = !editing ">edit</button></div>	
+		</div>
+
+	<br>
+	<br>
+	
+</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+<script src="app.js"></script>
+<script src="service.js"></script>
+</html>

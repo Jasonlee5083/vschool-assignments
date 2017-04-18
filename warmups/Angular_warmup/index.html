@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body ng-controller="mainController">
+
+<header>{{name|capitalize}}</header>
+	<div ng-model="test"></div>
+	<input type="text" ng-model="number.first"> <input type="text" ng-model="number.second">
+	
+	<button ng-click="sum(number)">Sum</button>
+	<label for="Sum">{{sum}}</label>
+	
+	<div ng-controller="secondController">
+	<input type="text" ng-model="number2.first">
+	<input type="text" ng-model="number2.second">
+	
+		<button ng-click="product(number2)">Product</button>	
+		<label for="Product">{{product}}</label>
+	</div>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script src="app.js"></script>
+	<script src="service.js"></script>
+</body>
+</html>

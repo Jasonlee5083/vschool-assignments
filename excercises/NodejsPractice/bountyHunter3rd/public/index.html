@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="bounty-hunter">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+</head>
+
+<body ng-controller="bounties">
+	<!--bounty inputs and submits-->
+	<form id="inputs">
+
+		<div class="col-xs-2">
+			<input ng-model="newitem.fName" placeholder="First Name">
+		</div>
+		<div class="col-xs-2">
+			<input ng-model="newitem.lName" placeholder="Last Name">
+		</div>
+		<div class="col-xs-2">
+			<input ng-model="newitem.cost" placeholder="cost">
+		</div>
+
+		<div>
+			<input type="checkbox" value="Living" ng-model="newitem.living">Living<br>
+
+		</div>
+
+		<label class="radio-inline">
+      		<input type="radio" name="SJradio" value="Sith" ng-model="newitem.sith">Sith
+    		</label>
+		<label class="radio-inline">
+     		 <input type="radio" name="SJradio" value="Jedi" ng-model="newitem.jedi">Jedi
+    		</label>
+		<!--submit button-->
+		<div>
+			<button ng-click=submit(newitem)>Submit</button>
+		</div>
+
+	</form>
+	<br>
+	<br>
+
+	<!--bounty show-->
+	<div ng-repeat="bounty in bounties track by $index">
+		<div ng-hide="editing">
+			{{bounty.fName}}
+			<br> {{bounty.lName}}
+			<br> {{bounty.cost | currency:"$"}}
+			<br> {{bounty.living}}
+			<br> {{bounty.sith}}
+			<br> {{bounty.jedi}}
+			<br>
+		</div>
+		<!--remove button-->
+		<button id="delete" class="btn btn-success" ng-click="remove($index, bounty._id)">remove </button>
+
+		<div>
+			<!--editing part showing after click edit button-->
+			<div ng-show="editing">
+				<div class="col-xs-2">
+					<input ng-model="bounty.fName" placeholder="First Name">
+				</div>
+				<div class="col-xs-2">
+					<input ng-model="bounty.lName" placeholder="Last Name">
+				</div>
+				<div class="col-xs-2">
+					<input ng-model="bounty.cost" placeholder="cost">
+				</div>
+
+				<div>
+					<input type="checkbox">Living<br>
+				</div>
+
+				<label class="radio-inline">
+      			<input type="radio" name="SJradio">Sith
+    			</label>
+				<label class="radio-inline">
+     		 	<input type="radio" name="SJradio">Jedi
+    			</label>
+				<!--save edited item-->
+				<div>
+					<button ng-click="save(bounty); editing = !editing">save</button>
+				</div>
+
+			</div>
+
+			<!--edit button-->
+			<div><button id="edit" class="btn btn-success" ng-click="editing = !editing ">edit</button></div>
+			<br>
+		</div>
+	</div>
+
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+
+	<script src="app.js"></script>
+	<script src="service.js"></script>
+
+
+
+</body>
+
+</html>

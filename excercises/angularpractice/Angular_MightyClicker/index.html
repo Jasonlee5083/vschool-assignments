@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link ref="stylesheet" href="styles.css">
+</head>
+<body ng-controller="mainController">
+	
+	
+<div>
+{{bcount}}
+	<button type="button" class="blueClick1" ng-click="blueClick()">blueClick</button>
+</div>
+
+<div>
+{{rcount}}
+	<button type="button" class="redClick1" ng-click="redClick()">redClick</button>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script src="app.js"></script>	
+<script src="service.js"></script>
+</body>
+</html>

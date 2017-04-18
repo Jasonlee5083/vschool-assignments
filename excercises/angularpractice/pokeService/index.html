@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body ng-controller="pokecontroller">
+ 
+<input name="pokemon" ng-model="pokemonName">
+
+<button ng-click="addpoke(pokemonName)">press</button>
+<button ng-click="removepokemon(pokemonName)">remove</button>
+
+<div ng-repeat ="item in pokemon track by $index">
+	{{item}} : Pokemon added
+	
+</div>
+
+
+
+ 
+ <ng-view></ng-view>
+   
+   
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
+  <script src="app.js"></script>
+  <script src="service.js"></script>
+</body>
+</html>
+
+
+
+
+<!--
+{{ test }}
+
+<input name="name" ng-model="input">
+
+
+<button ng-click="submit(input)">press</button>
+
+
+{{name}} is your name!-->
